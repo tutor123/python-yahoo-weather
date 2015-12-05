@@ -213,6 +213,8 @@ def main(argv):
     # Create the command line parser.
     cli_parser = create_cli_parser()
 
+    print argv
+
     # Get the options and arguments.
     args = cli_parser.parse_args(argv)
 
