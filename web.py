@@ -41,7 +41,29 @@ def weather(location_code):
 
     weather_stats = get_weather(location_code,args)
 
+    print weather_stats
+
     return jsonify({"data": weather_stats})
+
+@app.route('/api/all')
+def all_weather():
+    # Create the command line parser.
+    cli_parser = create_cli_parser()
+    all = []
+
+    # Get the options and arguments.
+
+    for location_code in ["95131", "10001", "95035", "95132"]:
+        args = cli_parser.parse_args([location_code])
+
+        weather_stats = get_weather(location_code,args)
+        all.append(weather_stats)
+
+    print all
+
+    return jsonify({"data": all})
+
+
 
 
 if __name__ == '__main__':

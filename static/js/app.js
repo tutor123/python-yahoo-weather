@@ -4,15 +4,15 @@ $(function () {
 
     var SERIES = {};
 
-    var table = $('#location_code').DataTable({
-	"ajax": "/api/location_code",
+    var table = $('#weathers').DataTable({
+	"ajax": "/api/all",
 	"columns": [
-            { "title": "City", "data": "location_code" },
-            { "title": "current_condition", "data": "ycondition.getAttribute('temp')" },
-            { "title": "current_temp", "data": "Command" },
-            { "title": "forecasts", "data": "forecasts" },
-            { "title": "region", "data": "ylocation.getAttribute('region')" },
-            { "title": "units", "data": "yunits.getAttribute('temperature')" }
+            { "title": "City", "data": "city" },
+            { "title": "Currrent Condition", "data": "current_condition" },
+            { "title": "Current Temp", "data": "current_temp" },
+            { "title": "Forecasts", "data": "forecasts" },
+            { "title": "Region", "data": "region" },
+            { "title": "Units", "data": "units" }
 	],
         "aoColumnDefs": [{
             "aTargets": [ 0 ],
